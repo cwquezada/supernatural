@@ -2,8 +2,6 @@
 <html ng-app="app">
   <head>
     <title><%=typeof title == 'undefined' ? 'Supernatural Lingerie' : title%></title>
-
-    <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v=4">
     <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=4" sizes="32x32">
@@ -12,36 +10,14 @@
     <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=4" color="#42474e">
     <meta name="theme-color" content="#ffffff">
     <base href="/">
-
-    <!--
-        Stylesheets and Preprocessors
-        ==============================
-
-        You can always bring in CSS files manually with `<link>` tags, or asynchronously
-        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
-        of Sails' conventional asset pipeline (boilerplate Gruntfile).
-
-        By default, stylesheets from your `assets/styles` folder are included
-        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
-        are supported. In production, your styles will be minified and concatenated into
-        a single file.
-
-        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
-        For example, here are a few things you could do:
-
-            + Change the order of your CSS files
-            + Import stylesheets from other directories
-            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
-    -->
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <!--STYLES-->
-    <link rel="stylesheet" href="/styles/animate.min.css">
-    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/min/production.min.css">
     <!--STYLES END-->
   </head>
 
-  <body class="pentacle" ng-controller="InterfaceController">
+  <body class="pentacle" ng-controller="MainController">
 
     <div id="page" ui-view="page"></div>
 
@@ -67,7 +43,7 @@
               </span>
             </p>
             <p class="control has-icon has-icon-right">
-              <input class="input" ng-class="{'is-danger': contactForm.email.$invalid && !contactForm.email.$pristine}" type="email" name="email" ng-model="email" placeholder="Email" required>
+              <input class="input" ng-class="{'is-danger': contactForm.email.$invalid && !contactForm.email.$pristine}" type="email" name="email" ng-model="email" placeholder="Email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required>
               <span ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="icon is-small">
                 <i class="fa fa-warning"></i>
               </span>
@@ -122,70 +98,19 @@
     
     <%- body %>
 
-    <!--
-        Client-side Templates
-        ========================
-
-        HTML templates are important prerequisites of modern, rich client applications.
-        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
-        that you load these templates client-side.
-
-        By default, your Gruntfile is configured to automatically load and precompile
-        client-side JST templates in your `assets/templates` folder, then
-        include them here automatically (between TEMPLATES and TEMPLATES END).
-
-        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
-        For example, here are a few things you could do:
-
-            + Import templates from other directories
-            + Use a different template engine (handlebars, jade, dust, etc.)
-            + Internationalize your client-side templates using a server-side
-              stringfile before they're served.
-    -->
-
     <!--TEMPLATES-->
     
     <!--TEMPLATES END-->
-
-
-    <!--
-
-      Client-side Javascript
-      ========================
-
-      You can always bring in JS files manually with `script` tags, or asynchronously
-      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
-      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
-
-      By default, files in your `assets/js` folder are included here
-      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
-      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
-      and concatenated into a single file.
-
-      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
-      For example, here are a few things you could do:
-
-          + Change the order of your scripts
-          + Import scripts from other directories
-          + Use a different preprocessor, like TypeScript
-
-    -->
     <!--
     <script src="http://localhost:35729/livereload.js"></script>
     -->
     <!--SCRIPTS-->
-    <script src="/js/dependencies/sails.io.js"></script>
-    <script src="/js/dependencies/angular.js"></script>
-    <script src="/js/dependencies/angular-animate.js"></script>
-    <script src="/js/dependencies/angular-ui-router.js"></script>
-    <script src="/js/dependencies/ct-ui-router-extras.min.js"></script>
-    <script src="/js/dependencies/MorphSVGPlugin.min.js"></script>
-    <script src="/js/dependencies/TweenMax.min.js"></script>
-    <script src="/js/public/app.js"></script>
-    <script src="/js/public/shared/config/app.config.js"></script>
-    <script src="/js/public/shared/interface/interface.controller.js"></script>
-    <script src="/js/public/shared/pages/home/home.controller.js"></script>
-    <script src="/js/public/shared/services/app.services.js"></script>
+    <script src="/min/production.min.js"></script>
     <!--SCRIPTS END-->
+    <script src="/dist/angular/angular.min.js"></script>
+    <script src="/dist/angular/angular-ui-router.min.js"></script>
+    <script src="/dist/angular/ct-ui-router-extras.min.js"></script>
+    <script src="/dist/angular/angular-animate.min.js"></script>
+    <script src="/dist/angular/app.js"></script>
   </body>
 </html>
