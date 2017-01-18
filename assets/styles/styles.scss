@@ -1,0 +1,205 @@
+body.pentacle {
+	background: $black-bis;
+	height: 100vh;
+	width: 100vw;
+
+	.is-hidden {
+		display: none !important;
+	}
+
+	.button {
+		background-color: $black-bis;
+		border-color: $silver;
+		border-width: 2px;
+		color: $silver;
+		letter-spacing: .3125em;
+		margin-bottom: 1.75em;
+		padding: 0 2.7em;
+		text-transform: uppercase;
+		width: 128px;
+	}
+
+	.button:hover {
+		background-color: $silver;
+		border-color: $silver;
+		color: $black-bis;
+	}
+
+	h2.subtitle {
+		letter-spacing: .3125em;
+		text-transform: uppercase;
+	}
+
+	.contact {
+
+		&.ng-hide-remove {
+			animation: fadeIn 1s;
+		}
+
+	}
+
+	#home {
+
+		.hero {
+			background: $black-bis;
+			border: 9px double $silver;
+
+			h2.subtitle {
+				color: $silver;
+				margin-top: 1.7em;
+			}
+
+			.hero-body {
+
+				.logo {
+					margin: 0 auto;
+					width: 64%;
+					-webkit-animation-duration: 3s;
+					-moz-animation-duration: 3s;
+					-ms-animation-duration: 3s;
+
+					@include mobile {
+						width: 90%;
+					}
+
+				}
+
+				.logotype {
+					margin: 0 auto;
+					padding-top: 1.313em;
+					width: 32%;
+
+					@include mobile {
+						width: 64%;
+					}
+
+					-webkit-animation-duration: 2s;
+					-moz-animation-duration: 2s;
+					-ms-animation-duration: 2s;
+					-webkit-animation-delay: 2s;
+					-moz-animation-delay: 2s;
+					-ms-animation-delay: 2s;
+				}
+
+				svg {
+					fill: $silver;
+				}
+
+			}
+
+		}
+	}
+
+	.modal-background {
+		background-color: rgba(10, 10, 10, 0.90);
+	}
+
+	.modal {
+		display: flex;
+
+		.modal-close:hover, 
+		.modal-close:focus {
+			background-color: $silver;
+		}
+
+		.modal-content {
+			color: $silver;
+			fill: $silver;
+			padding: 1em 2em;
+			max-height: 1313px;
+
+			@include mobile {
+				padding: 2em 1em;
+			}
+
+			-webkit-transition: max-height 2.0s ease-in-out;
+			-moz-transition: max-height 2.0s ease-in-out;
+			transition: max-height 2.0s ease-in-out;
+
+			&.isForm {
+				max-height: 900px;
+			}
+
+			&.isRecieved {
+				max-height: 800px;
+			}
+
+			&.isLost {
+				max-height: 700px;
+			}
+
+		}
+
+		.status {
+			padding-top: 1em;
+			text-align: center;
+
+			svg {
+				width: 75%;
+			}
+		}
+
+		form {
+
+			input,
+			textarea {
+				background-color: $black-bis;
+				border-color: $silver;
+				letter-spacing: .1125em;
+				color: $white-ter;
+
+				&:focus {
+					border-color: $white-ter;
+				}
+			}
+
+			p.honeyPot {
+				display: none;
+			}
+
+		}
+
+		.button {
+
+			&.is-send {
+				background-color: $grey-lighter;
+
+				&:hover {
+					background-color: $white-ter;
+				}
+
+			}
+
+			&.is-link {
+				color: $black-bis;
+				text-decoration: none;
+
+				&:hover {
+					color: $white-ter;
+					background-color: $black-bis;
+				}
+
+			}
+
+			&.is-disabled {
+				opacity: .25;
+			}
+		}
+
+		&.ng-hide-add {
+			animation: fadeOutDown 1s;
+		}
+
+		&.ng-hide-remove {
+			animation: fadeInUp 1s;
+		}
+
+		.title {
+			color: $grey-lighter;
+			line-height: 1.5em;
+			padding: 1em;
+			text-align: center;
+		}
+	}
+
+}
