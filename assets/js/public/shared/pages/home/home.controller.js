@@ -1,3 +1,5 @@
+// 'use strict';
+
 angular.module('HomeComponents')
 
 .controller('HomeController', ['$scope', 'InterfaceServices',

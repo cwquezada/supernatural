@@ -1,6 +1,8 @@
+// 'use strict';
+
 angular.module('AppServices')
 
-app.factory('InterfaceServices', function($rootScope) {
+app.factory('InterfaceServices', ['$rootScope', function($rootScope) {
 
 	var root = {};
 
@@ -14,7 +16,7 @@ app.factory('InterfaceServices', function($rootScope) {
 
 	return root;
 
-});
+}]);
 
 app.factory('InterfaceAnimations', function() {
 

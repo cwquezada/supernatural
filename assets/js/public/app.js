@@ -1,3 +1,5 @@
+// 'use strict';
+
 var app = angular.module('app', [
 	'ngAnimate',
 	'ui.router',
@@ -6,12 +8,10 @@ var app = angular.module('app', [
 	'AppConfig',
 	'InterfaceComponents',
 	'HomeComponents',
-	'ContactComponents'
 ]);
 
 angular.module('AppServices', []);
 angular.module('AppConfig', []);
 angular.module('InterfaceComponents', []);
 angular.module('HomeComponents', []);
-angular.module('ContactComponents', []);
 

@@ -77,6 +77,9 @@ module.exports.session = {
   // adapter: 'mongo',
   // url: 'mongodb://user:password@localhost:27017/dbname', // user, password and port optional
 
+  adapter: 'mongo',
+  url: 'mongodb://priestess:Persephone@ds117919.mlab.com:17919/supernatural' // user, password and port optional
+
   /***************************************************************************
   *                                                                          *
   * Optional Values:                                                         *

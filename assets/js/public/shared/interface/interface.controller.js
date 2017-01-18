@@ -1,3 +1,5 @@
+// 'use strict';
+
 angular.module('InterfaceComponents')
 
 .controller('InterfaceController', ['$scope', '$http', '$timeout', 'InterfaceServices', 'InterfaceAnimations', 

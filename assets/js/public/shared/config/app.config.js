@@ -1,3 +1,5 @@
+// 'use strict';
+
 angular.module('AppConfig')
 
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
