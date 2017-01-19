@@ -64,4 +64,5 @@ if (process.env.NODE_ENV === 'production') {
   config.hooks = config.hooks || {};
   config.hooks.grunt = false;
 }
+
 sails.lift(config);
