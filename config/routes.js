@@ -36,7 +36,9 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  'POST /contact': 'ContactController.create'
+  'POST /contact': 'ContactController.create',
+
+  'post /User': 'UserController.create'
 
 
   /***************************************************************************
