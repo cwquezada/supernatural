@@ -47,14 +47,8 @@
 				$scope.message = null;
 				$scope.contactForm.$setPristine();
 				$scope.interface.isContact = false;
+				InterfaceAnimations.morphMessage('#get-in-touch');
 			}
-
-			// $timeout(function() {
-			// 	InterfaceAnimations.morphMessage('#message-recieved');
-			// 	$scope.interface.isForm = false;
-			// 	$scope.interface.isRecieved = true;
-			// 	$scope.interface.isLost = false;
-			// }, 6000)
 
 			$scope.openContact = function() {
 				$scope.interface.isContact = true;
@@ -113,11 +107,6 @@
 		var states = [];
 		var baseUrl = 'dist/angular/shared/pages/';
 
-		// ----------------------------------------------------
-		// Routes
-		// ----------------------------------------------------
-
-		// main root of app
 		states.push({
 			name: 'home',
 			url: '/',
@@ -130,13 +119,13 @@
 			}
 
 		});
-		// set state provider
+
 		angular.forEach(states, function(state) {
 			$stateProvider.state(state);
 		})
-		// set default
+
 		$urlRouterProvider.otherwise('/');
-		// use HTML5 history apu
+
 		$locationProvider.html5Mode(true);
 
 	}]);
